@@ -8,10 +8,10 @@
 
     <bean id="templateResolver"
           class="org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="" />
+        <property name="prefix" value="views/" />
         <property name="suffix" value=".html" />
-        <property name="templateMode" value="HTML5" />
-        <property name="cacheable" value="false" />
+        <property name="templateMode" value="HTML" />
+        <property name="cacheable" value="true" />
     </bean>
 
 
@@ -23,6 +23,7 @@
                 <bean class="nz.net.ultraq.thymeleaf.LayoutDialect" />
             </set>
         </property>
+        <property name="enableSpringELCompiler" value="true" />
     </bean>
 
     <bean class="org.thymeleaf.spring6.view.ThymeleafViewResolver">
