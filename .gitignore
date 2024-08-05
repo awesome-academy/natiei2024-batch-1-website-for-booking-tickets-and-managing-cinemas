@@ -25,6 +25,7 @@ replay_pid*
 
 # IntelliJ
 .idea/
+*.iml
 
 # Environment
 src/main/resources/datasource.properties
@@ -34,3 +35,4 @@ src/main/resources/datasource.properties
 
 # Target
 target
+
