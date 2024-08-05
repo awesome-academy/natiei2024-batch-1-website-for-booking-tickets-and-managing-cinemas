@@ -1,4 +1,4 @@
-package cinemas.validator;
+package cinemas.validators;
 
 public class UserValidator {
 }

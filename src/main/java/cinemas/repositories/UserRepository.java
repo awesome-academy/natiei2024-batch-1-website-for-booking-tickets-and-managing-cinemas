@@ -1,6 +1,6 @@
 package cinemas.repositories;
 
-import cinemas.model.User;
+import cinemas.models.User;
 
-public interface UserRepository extends CrudRepository<User, Long>{
+public interface UserRepository extends BaseRepository<User, Long>{
 }

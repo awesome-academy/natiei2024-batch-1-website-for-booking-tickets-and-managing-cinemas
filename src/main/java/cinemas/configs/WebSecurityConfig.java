@@ -1,4 +1,4 @@
-package cinemas.config;
+package cinemas.configs;
 
 public class WebSecurityConfig {
 }

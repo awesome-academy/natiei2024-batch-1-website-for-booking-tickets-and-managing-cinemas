@@ -1,4 +1,4 @@
-package cinemas.model;
+package cinemas.models;
 
 
 import jakarta.persistence.*;
