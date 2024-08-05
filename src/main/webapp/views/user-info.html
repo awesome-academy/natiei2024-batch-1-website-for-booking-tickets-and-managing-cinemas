@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <title>Content page</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <h1>User Information</h1>
+    <p>ID: <span th:text="${user.id}"></span></p>
+    <p>Name: <span th:text="${user.name}"></span></p>
+    <p>Address: <span th:text="${user.address}"></span></p>
+</section>
+</body>
+</html>
