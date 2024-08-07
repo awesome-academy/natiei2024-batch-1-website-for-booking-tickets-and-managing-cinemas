@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Example </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+    <div class="slideshow-container" th:fragment="slideBanner" >
+        <ul>
+            <li class="Slide active cdSlide">
+                <a class="AnhSlide" href="">
+                    <img th:src="@{./assets/user/images/Slide1.jpg}" alt="" class="Anh">
+                </a>
+            </li>
+
+
+            <li class="Slide AnSlide">
+                <a class="AnhSlide">
+                    <img th:src="@{./assets/user/images/Slide2.jpg}" alt="" class="Anh">
+                </a>
+            </li>
+
+
+            <li class="Slide AnSlide">
+                <a class="AnhSlide">
+                    <img th:src="@{./assets/user/images/Slide3.jpg}" alt="" class="Anh">
+                </a>
+
+            </li>
+
+            <li class="Slide AnSlide">
+                <a class="AnhSlide" href="">
+                    <img th:src="@{./assets/user/images/Slide4.jpg}" alt="" class="Anh">
+                </a>
+            </li>
+
+            <li class="Slide AnSlide">
+                <a class="AnhSlide" href="">
+                    <img th:src="@{./assets/user/images/Slide4.jpg}" alt="" class="Anh">
+                </a>
+            </li>
+        </ul>
+
+        <div class="nutchuyenSlide">
+            <ul class="quanlynutchuyen">
+                <li class="kichhoat"></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+
+            </ul>
+        </div>
+
+        <div class="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>

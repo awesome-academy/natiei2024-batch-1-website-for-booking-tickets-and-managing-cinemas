@@ -20,7 +20,6 @@ header {
 
 .search-bar {
     display: flex;
-    align-items: center;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;

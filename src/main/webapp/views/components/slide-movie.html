@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Selection Slider</title>
+
+</head>
+<body>
+<div class="banner-container" th:fragment="slideMovie">
+  <div class="movie-selection">
+    <h2>movie selection</h2>
+  </div>
+  <div class="slide-movie-banner">
+    <button id="prev" class="nav-button"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="banner-wrapper">
+      <ul class="banners">
+        <li class="banner">
+          <img th:src = "@{./assets/user/images/Slide1.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" th:href="${some1}">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <a class="play-button" href="https://www.youtube.com/watch?v=t8OZPJfpcTM&t=24837s"></a>
+        </li>
+        <li class="banner">
+          <img th:src = "@{./assets/user/images/Slide2.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" href="">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <div class = "play-button"></div>
+        </li>
+        <li class="banner">
+          <img th:src="@{./assets/user/images/Slide3.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" href="">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <div class = "play-button"></div>
+        </li>
+        <li class="banner">
+          <img th:src="@{./assets/user/images/Slide4.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" href="">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <div class = "play-button"></div>
+        </li>
+        <li class="banner">
+          <img th:src="@{./assets/user/images/Slide4.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" href="">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <div class = "play-button"></div>
+        </li>
+
+        <li class="banner">
+          <img th:src="@{./assets/user/images/Slide1.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" href="">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <div class = "play-button"></div>
+        </li>
+
+        <li class="banner">
+          <img th:src="@{./assets/user/images/Slide1.jpg}" alt="">
+          <div class = "feature_film_content">
+            <h3>KẺ TRỘM MẶT TRĂNG 4</h3>
+            <a title="Xem chi tiết" class="button" href="">Xem chi tiết</a>
+            <button>Mua vé</button>
+          </div>
+          <div class = "play-button"></div>
+        </li>
+      </ul>
+    </div>
+
+    <button id="next" class="nav-button"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+</div>
+
+</body>
+</html>
