@@ -9,6 +9,5 @@ public class AdminHomeController {
     public String getAdminDashboard() {
         return "admin/admin-dashboard";
     }
-
 }
 

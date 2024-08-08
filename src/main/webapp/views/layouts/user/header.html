@@ -15,8 +15,17 @@
             <button type="submit"><img th:src="@{/assets/user/images/search-icon.png}" alt="Search"></button>
         </div>
         <div class="language-switch">
-            <button id="lang-vi" class="btn btn-primary">VI</button>
-            <button id="lang-en" class="btn btn-primary">EN</button>
+            <button class="btn btn-primary" th:classappend="${#locale.language == 'vi' ? ' active' : ''}"
+               onclick="reloadPageWithLanguage('vi', this)">VI</button>
+            <button class="btn btn-primary" th:classappend="${#locale.language == 'en' ? ' active' : ''}"
+               onclick="reloadPageWithLanguage('en', this)">EN</button>
+        </div>
+        <div th:if="${#authorization.expression('isAuthenticated()')}" class="user-info">
+            <span class="username" th:text="#{header.greet(${session.user.getFullName()})}"></span>
+            <a th:href="@{/logout}" th:text="#{header.logout}"></a>
+        </div>
+        <div th:unless="${#authorization.expression('isAuthenticated()')}" class="login-prompt">
+            <a th:href="@{/login}" th:text="#{header.login}"></a>
         </div>
     </div>
     <nav class="main-nav">
@@ -26,6 +35,25 @@
             <li><a href="member">THÀNH VIÊN>></a></li>
         </ul>
     </nav>
+    <script>
+        function reloadPageWithLanguage(lang, element) {
+            // Check if the element has the class 'active'
+            if (element.classList.contains('active')) {
+                // If it has the class 'active', do nothing
+                return;
+            }
+
+            const currentUrl = window.location.href;
+            let newUrl;
+            if (currentUrl.includes('?')) {
+                newUrl = `${currentUrl.split('?')[0]}?lang=${lang}`;
+            } else {
+                newUrl = `${currentUrl}?lang=${lang}`;
+            }
+            window.location.href = newUrl;
+        }
+    </script>
 </header>
+
 </body>
 </html>
