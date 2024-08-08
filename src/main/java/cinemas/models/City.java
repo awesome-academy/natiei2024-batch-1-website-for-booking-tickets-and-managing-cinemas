@@ -12,7 +12,7 @@ public class City {
 
     private String name;
 
-    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER, orphanRemoval = false)
+    @OneToMany(mappedBy = "city", orphanRemoval = false)
     private Set<Theater> theaters;
 
     // Getters and Setters
