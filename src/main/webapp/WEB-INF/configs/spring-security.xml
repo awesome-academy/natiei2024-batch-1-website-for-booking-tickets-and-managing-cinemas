@@ -1,4 +1,5 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans
+  xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:security="http://www.springframework.org/schema/security"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
@@ -6,14 +7,13 @@
                            http://www.springframework.org/schema/security
                            http://www.springframework.org/schema/security/spring-security.xsd">
 
+  <bean id="multipartFilter" class="org.springframework.web.multipart.support.MultipartFilter"/>
 
   <security:http auto-config="true" use-expressions="true">
     <security:intercept-url pattern="/login" access="isAnonymous()"/>
     <security:intercept-url pattern="/logout" access="permitAll"/>
     <security:intercept-url pattern="/" access="permitAll"/>
-
     <security:intercept-url pattern="/assets/**" access="permitAll"/>
-
 
     <!-- Restrict access to admin pages, require CUSTOMER role -->
     <security:intercept-url pattern="/customer/**" access="hasRole('ROLE_CUSTOMER')"/>
@@ -22,6 +22,7 @@
     <!-- Restrict access to admin pages, require ADMIN role -->
     <security:intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')"/>
     <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_MANAGER')"/>
+    <security:intercept-url pattern="/**" access="permitAll"/>
 
     <!-- Configure login form -->
     <security:form-login login-page="/login"
@@ -34,6 +35,9 @@
 
     <!-- Configure remember-me -->
     <security:remember-me key="uniqueAndSecret" token-validity-seconds="1209600" remember-me-parameter="remember-me"/>
+    <!-- enable CSRF protection -->
+    <security:csrf/>
+    <security:custom-filter ref="multipartFilter" before="SECURITY_CONTEXT_FILTER"/>
   </security:http>
 
   <security:authentication-manager>
@@ -47,6 +51,7 @@
     class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
 
   <bean id="customAuthenticationSuccessHandler" class="cinemas.configs.CustomAuthenticationSuccessHandler">
-    <constructor-arg ref="userService"/>
+    <constructor-arg ref="usersService"/>
   </bean>
+
 </beans>

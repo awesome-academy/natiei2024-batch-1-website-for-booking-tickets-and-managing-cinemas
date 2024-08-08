@@ -19,10 +19,10 @@ public class Screen extends CreationUpdationAuditableEntity {
     private Integer horizontalSize = 0;
 
     @ManyToOne
-    @JoinColumn(name = "theater_id", insertable = false, updatable = false)
+    @JoinColumn(name = "theater_id")
     private Theater theater;
 
-    @OneToMany(mappedBy = "screen", orphanRemoval = true)
+    @OneToMany(mappedBy = "screen", cascade = {CascadeType.REMOVE, CascadeType.MERGE, CascadeType.PERSIST}, orphanRemoval = true)
     private Set<Seat> seats;
 
     // Getters and Setters

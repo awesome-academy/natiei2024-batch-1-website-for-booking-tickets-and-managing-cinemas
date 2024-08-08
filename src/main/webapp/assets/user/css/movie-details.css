@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfbe9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-title h1, .product-name-reponsive h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+.shop-img{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.product-img-box {
+    width: 30%;
+    margin-right: 20px;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.movie-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.movie-info label {
+    font-weight: bold;
+}
+
+.movie-info .std {
+    display: inline-block;
+    color: #666;
+}
+
+.movie-rating .std {
+    display: inline-block;
+    background-color: #ffeb3b;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.movie-detail-fb-booking {
+    clear: both;
+    padding-top: 15px;
+    text-align: center;
+    display: flex;
+    align-items: start;
+    flex-direction: row;
+    margin-left: 30px;
+}
+
+.btn-buy-cover{
+    background-color: #e71a0f;
+    padding: 1.5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.movie-detail-fb-booking .btn{
+    background-color: #e71a0f;
+    color: white;
+    font-size: 16px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 0.2px solid #ffffff;
+}
+.btn:hover {
+    background-color: darkred;
+}
+
+.product-collateral{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.description {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.product-collateral {
+    margin-top: 20px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.fb-like{
+    padding-top: 15px;
+}

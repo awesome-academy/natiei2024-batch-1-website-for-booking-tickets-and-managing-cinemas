@@ -27,8 +27,8 @@ public class Booking extends CreationUpdationAuditableEntity {
     @JoinColumn(name = "customer_id", insertable = false, updatable = false)
     private User customer;
 
-    @ManyToMany(mappedBy = "bookings")
-    private Set<Seat> bookingSeats;
+    @OneToMany(mappedBy = "booking")
+    private Set<ShowtimeSeat> bookingSeats;
 
     @OneToMany(mappedBy = "booking")
     private Set<BookingFood> bookingFoods;
@@ -82,11 +82,11 @@ public class Booking extends CreationUpdationAuditableEntity {
         this.customer = customer;
     }
 
-    public Set<Seat> getBookingSeats() {
+    public Set<ShowtimeSeat> getBookingSeats() {
         return bookingSeats;
     }
 
-    public void setBookingSeats(Set<Seat> bookingSeats) {
+    public void setBookingSeats(Set<ShowtimeSeat> bookingSeats) {
         this.bookingSeats = bookingSeats;
     }
 

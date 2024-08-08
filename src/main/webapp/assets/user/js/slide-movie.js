@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function(){
     const bannersContainer = document.querySelector('.banners');
     const prevButton = document.getElementById('prev');
@@ -30,4 +29,5 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     // Initial display
     updateBannerPosition();
+
 },false)

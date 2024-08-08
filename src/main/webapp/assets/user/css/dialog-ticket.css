@@ -1,0 +1,179 @@
+.modal{
+    width: 90%!important;
+    height: 90% !important;
+    left: 5% !important;
+}
+.modal-dialog {
+    max-width: 100% !important;
+    margin: unset !important;
+}
+
+.modal-content {
+    display: block !important;
+    background-color: #fdfcf0 !important;
+    border: none !important;
+}
+
+.cboxWrapper {
+    justify-content: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fdfcf0;
+}
+
+
+.cboxContent {
+    background-color: #fdfcf0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+}
+
+.schedule-popup {
+    width: 100%;
+}
+
+.toggle-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.toggle-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.toggle-tabs::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+}
+
+.toggle-tabs::after {
+    bottom: -20px;
+}
+
+.toggle-tabs li {
+    margin: 5px;
+    padding: 10px;
+    background-color: #fdfcf0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    width: 60px;
+    transition: all 0.3s ease;
+}
+
+.toggle-tabs li.current {
+    border: 2px solid #000;
+}
+
+.toggle-tabs li:hover {
+    background-color: #e0e0e0;
+}
+.address{
+    margin-top: 20px;
+}
+.address li{
+    padding: 3px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.day span,
+.day em,
+.day strong {
+    display: block;
+    margin: 2px 0;
+}
+
+.day span {
+    font-size: 13px;
+}
+
+.day em {
+    font-size: 15px;
+    color: #777;
+}
+
+.day strong {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+.select-showtime {
+    list-style-type: none;
+    width: 100%;
+    padding-left: 1px
+}
+
+.select-showtime li {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.site-cgv h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cinema h4 {
+    font-size: 16px;
+    color: #777;
+    margin: 8px 0 10px 10px;
+}
+
+.showtime {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+}
+
+.showtime li.item {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.showtime li.item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.showtime li.item:hover {
+    background-color: #e0e0e0;
+    border-color: #777;
+}
+
+
+.select-showtime.showtime-current {
+    display: block; /* Hiển thị khi có lớp showtime-current */
+}
+
+.select-showtime.closed {
+    display: none;
+}
+

@@ -8,27 +8,19 @@ import java.util.Set;
 @Entity
 @Table(name = "seats")
 public class Seat {
-    @ManyToMany
-    @JoinTable(name = "showtime_seats", joinColumns = @JoinColumn(name = "seat_id"), inverseJoinColumns = @JoinColumn(name = "showtime_id"))
-    Set<Showtime> showtimes;
-    @ManyToMany
-    @JoinTable(name = "booking_seats", joinColumns = @JoinColumn(name = "seat_id"), inverseJoinColumns = @JoinColumn(name = "booking_id"))
-    Set<Booking> bookings;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     @Enumerated(EnumType.ORDINAL)
-    private SeatTypeEnum type; // 0 = standard, 1 = vip, 2 = couple
-    private Boolean available;
+    private SeatTypeEnum type;
+    private Boolean available = true;
     @Column(name = "vertical_index")
     private Integer verticalIndex;
     @Column(name = "horizontal_index")
     private Integer horizontalIndex;
-    @Column(name = "pair_to_id")
-    private Integer pairToId;
     @ManyToOne
-    @JoinColumn(name = "screen_id", insertable = false, updatable = false)
+    @JoinColumn(name = "screen_id")
     private Screen screen;
 
     // Getters and Setters
@@ -78,14 +70,6 @@ public class Seat {
 
     public void setHorizontalIndex(Integer horizontalIndex) {
         this.horizontalIndex = horizontalIndex;
-    }
-
-    public Integer getPairToId() {
-        return pairToId;
-    }
-
-    public void setPairToId(Integer pairToId) {
-        this.pairToId = pairToId;
     }
 
     public Screen getScreen() {

@@ -25,10 +25,10 @@
             <h3 th:text="${movie.titleVn}">KẺ TRỘM MẶT TRĂNG 4</h3>
 
             <!-- Liên kết đến trang chi tiết phim -->
-            <a title="Xem chi tiết" class="button" th:href="@{/movies/detail/{id}(id=${movie.id})}">Xem chi tiết</a>
+            <a title="Xem chi tiết" class="button" th:href="@{/movies/{id}(id=${movie.id})}">Xem chi tiết</a>
 
             <!-- Nút mua vé -->
-            <button data-toggle="modal" data-target="#exampleModalLong">Mua vé</button>
+            <button data-toggle="modal" data-target="#exampleModalLong" th:attr="data-movie-id=${movie.id}">Mua vé</button>
           </div>
 
           <!-- Nút play liên kết đến trailer của phim -->

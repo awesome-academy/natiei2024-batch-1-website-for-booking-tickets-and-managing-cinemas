@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.w3.org/1999/xhtml"
+        layout:decorate="~{layouts/admin/layout}"
+        lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SCREEN ROOM</title>
+    <link rel="stylesheet" th:href="@{/assets/admin/css/screen.css}" />
+</head>
+<body>
+<section layout:fragment="body">
+    <div class="wrapper mt-3">
+        <div class="container-fluid">
+            <h1 class="h3 mb-3 text-gray-800">
+                Phòng chiếu <a th:href="@{/admin/screens/new}" class="btn btn-success btn-circle">+</a>
+            </h1>
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                            <div class="row mt-2">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="dataTables_length" id="dataTable_length"><label>Show <select
+                                            name="dataTable_length" aria-controls="dataTable"
+                                            class="custom-select custom-select-sm form-control form-control-sm">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> entries</label></div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input
+                                            type="search"
+                                            class="form-control form-control-sm"
+                                            placeholder=""
+                                            aria-controls="dataTable"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                           cellspacing="0" role="grid" aria-describedby="dataTable_info"
+                                           style="width: 100%;">
+                                        <thead>
+                                        <tr role="row">
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-label="STT : activate to sort column ascending"
+                                                style="width: 98.3333px;">STT
+                                            </th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-sort="ascending"
+                                                aria-label="Tên Rạp: activate to sort column descending"
+                                                style="width: 92.3333px;;;padding-left:15px;">Mã phòng
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-label="Loại Rạp: activate to sort column ascending"
+                                                style="width: 98.3333px;">Tên phòng
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Kích thước ngang: activate to sort column ascending"
+                                                style="width: 182.333px;">Kích thước ngang
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1"
+                                                aria-label="Kích thước dọc: activate to sort column ascending"
+                                                style="width: 155.333px;">Kích thước dọc
+                                            </th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-label=": activate to sort column ascending"
+                                                style="width: 70px;"></th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+
+
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">1</td>
+                                            <td>PXP-1</td>
+                                            <td>PC-01</td>
+                                            <td>15</td>
+                                            <td>20</td>
+                                            <td>
+                                                <a href=""
+                                                   class="btn btn-success btn-circle btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button onclick="" class="btn btn-danger btn-circle btn-sm">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">2</td>
+                                            <td>PXP-2</td>
+                                            <td>PC-02</td>
+                                            <td>20</td>
+                                            <td>25</td>
+                                            <td>
+                                                <a href=""
+                                                   class="btn btn-success btn-circle btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <button onclick="" class="btn btn-danger btn-circle btn-sm">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-5">
+                                    <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">
+                                        Showing 1 to 2 of 2 entries
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                        <ul class="pagination">
+                                            <li class="paginate_button page-item previous disabled"
+                                                id="dataTable_previous">
+                                                <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0"
+                                                   class="page-link">Previous</a></li>
+                                            <li class="paginate_button page-item active"><a href="#"
+                                                                                            aria-controls="dataTable"
+                                                                                            data-dt-idx="1" tabindex="0"
+                                                                                            class="page-link">1</a></li>
+                                            <li class="paginate_button page-item next disabled" id="dataTable_next"><a
+                                                    href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0"
+                                                    class="page-link">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

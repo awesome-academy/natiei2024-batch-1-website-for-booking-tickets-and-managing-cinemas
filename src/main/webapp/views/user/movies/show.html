@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/user/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfcf0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<section layout:fragment="body">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0" nonce="cwp7ACxj"></script>
+
+    <div class="main">
+        <div class="col-main">
+            <div class="product-view">
+                <div class="product-essential">
+                    <div class="page-title product-view">
+                        <h1>Nội dung phim</h1>
+                    </div>
+                    <div class="product-name-reponsive">
+                        <h1 th:text="${movie.titleVn}">PHIM ĐIỆN ẢNH THÁM TỬ LỪNG DANH CONAN: NGÔI SAO 5 CÁNH 1 TRIỆU ĐÔ</h1>
+                    </div>
+                    <div class="shop-img">
+                        <div class="product-img-box">
+                            <img th:src="@{${movie.photoUrl}}" alt="">
+                        </div>
+                        <div class="product-shop">
+                            <div class="movie-director movie-info">
+                                <label>Đạo diễn: </label>
+                                <div class="std">&nbsp; <span th:text="${movie.director}"></span></div>
+                            </div>
+
+                            <div class="movie-acstress movie-info">
+                                <label>Diễn viên: </label>
+                                <div class="std">&nbsp; <span th:text="${movie.cast}"></span></div>
+                            </div>
+
+                            <div class="movie-genre movie-info">
+                                <label>Thể loại:  </label>
+                                <div class="std">
+                                    &nbsp;
+                                    <span th:each="genre : ${movie.genres}" th:text="${genre.nameVn} + ', '"></span>
+                                </div>
+                            </div>
+
+                            <div class="movie-release movie-info">
+                                <label>Khởi chiếu: </label>
+                                <div class="std">&nbsp; <span th:text="${#temporals.format(movie.releaseDate, 'dd/MM/yyyy')}"></span>
+                                </div>
+                            </div>
+
+                            <div class="movie-time movie-info">
+                                <label>Thời lượng: </label>
+                                <div class="std">&nbsp; <span th:text="${movie.runningTime}"></span> phút</div>
+                            </div>
+
+                            <div class="movie-language movie-info">
+                                <label>Ngôn ngữ: </label>
+                                <div class="std">&nbsp; <span th:text="${movie.languageVn}"></span></div>
+                            </div>
+
+                            <div class="movie-rating movie-info">
+                                <label>Rated: </label>
+                                <div class="std">&nbsp; T<span th:text="${movie.ageLimit}"></span> - Phim được phổ biến đến người xem từ đủ <span th:text="${movie.ageLimit}"></span> tuổi trở lên</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-like" data-href="/" data-width="15" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+                    <div class="movie-detail-fb-booking">
+                        <div class="btn-buy-cover">
+                            <a class="btn btn-trailer" th:href="@{${movie.trailer}}" target="_blank">Trailer</a>
+                        </div>
+                        <div class="btn-buy-cover">
+                            <button class="btn btn-buy">Mua vé</button>
+                        </div>
+                    </div>
+                    <div class="product-collateral">
+                        <div class="description">
+                            <p th:text="${movie.descriptionVn}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

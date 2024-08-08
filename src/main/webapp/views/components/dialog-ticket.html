@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <div class="cboxWrapper modal fade" id="exampleModalLong" aria-hidden="true" role="dialog" aria-labelledby="exampleModalLongTitle">
+    <input type="hidden" id="modalMovieId">
+    <div class="modal-dialog cboxContent" th:fragment="modal-content">
+      <div class="modal-content schedule-popup">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="toggle-content line">
+          <ul class="toggle-tabs date">
+            <li th:each="dateMap, iterStat : ${dates}"
+                th:data-day="${dateMap.day}"
+                th:classappend="${iterStat.index == 0} ? 'current' : ''">
+              <div class="day">
+                <span th:text="${dateMap.month}">08</span>
+                <em th:text="${dateMap.dayOfWeek}">Wed</em>
+                <strong th:text="${dateMap.day}">07</strong>
+              </div>
+            </li>
+          </ul>
+          <ul class="toggle-tabs address">
+            <li th:each="city : ${cities}"
+                th:data-id="${city.id}"
+                th:classappend="${city.id == 1} ? 'current' : ''">
+              <span th:text="${city.name}">Hà Nội</span>
+            </li>
+          </ul>
+          <ul class="select-showtime showtime-current" th:fragment="showtime-content">
+            <li th:each="entry : ${groupedShowtimes}">
+              <div class="site-cgv">
+                <h3 th:text="${entry.key.theater.name}">Tên rạp chiếu</h3>
+              </div>
+              <div class="cinema">
+                <h4 th:text="${entry.key.name}">Tên màn hình</h4>
+              </div>
+              <ul class="showtime">
+                <li class="item" th:each="timeSlot : ${entry.value}">
+                  <a href="#">
+                    <span th:text="${timeSlot.startTime.toLocalTime()}">19:30</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
