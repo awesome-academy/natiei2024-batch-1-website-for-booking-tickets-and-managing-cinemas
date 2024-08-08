@@ -11,10 +11,8 @@ public class City {
     private Integer id;
 
     private String name;
-    @Column(name = "name_en")
-    private String nameEn;
 
-    @OneToMany(mappedBy = "city", orphanRemoval = false)
+    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER, orphanRemoval = false)
     private Set<Theater> theaters;
 
     // Getters and Setters
@@ -32,14 +30,6 @@ public class City {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNameEn() {
-        return nameEn;
-    }
-
-    public void setNameEn(String nameEn) {
-        this.nameEn = nameEn;
     }
 
     public Set<Theater> getTheaters() {

@@ -11,6 +11,31 @@
             </bean>
         </property>
     </bean>
+
+    <bean id="reportService" parent="baseTransactionProxy">
+        <property name="target">
+            <bean class="cinemas.services.impl.ReportServiceImpl">
+                <constructor-arg ref="bookingRepository" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="cityService" parent="baseTransactionProxy">
+        <property name="target">
+            <bean class="cinemas.services.impl.CityServiceImpl">
+                <constructor-arg ref="cityRepository" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="theaterService" parent="baseTransactionProxy">
+        <property name="target">
+            <bean class="cinemas.services.impl.TheaterServiceImpl">
+                <constructor-arg ref="theaterRepository" />
+            </bean>
+        </property>
+    </bean>
+
     <bean id="bannerService" parent="baseTransactionProxy">
         <property name="target">
             <bean class="cinemas.services.impl.BannerServiceImpl">
