@@ -20,8 +20,6 @@ public class Showtime extends CreationUpdationAuditableEntity {
     private Integer priceStandard;
     @Column(name = "price_vip")
     private Integer priceVip;
-    @Column(name = "price_couple")
-    private Integer priceCouple;
 
     @ManyToOne
     @JoinColumn(name = "movie_id", insertable = false, updatable = false)
@@ -30,15 +28,25 @@ public class Showtime extends CreationUpdationAuditableEntity {
     @ManyToOne
     @JoinColumn(name = "screen_id", insertable = false, updatable = false)
     private Screen screen;
-    @ManyToMany(mappedBy = "showtimes")
-    private Set<Seat> showtimeSeats;
+    @OneToMany(mappedBy = "showtime")
+    private Set<ShowtimeSeat> showtimeSeats;
+    @ManyToOne
+    @JoinColumn(name = "city_id", insertable = false, updatable = false)
+    private City city;
 
-    // Getters and Setters
-    public Set<Seat> getShowtimeSeats() {
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public Set<ShowtimeSeat> getShowtimeSeats() {
         return showtimeSeats;
     }
 
-    public void setShowtimeSeats(Set<Seat> showtimeSeats) {
+    public void setShowtimeSeats(Set<ShowtimeSeat> showtimeSeats) {
         this.showtimeSeats = showtimeSeats;
     }
 
@@ -72,14 +80,6 @@ public class Showtime extends CreationUpdationAuditableEntity {
 
     public void setPriceVip(Integer priceVip) {
         this.priceVip = priceVip;
-    }
-
-    public Integer getPriceCouple() {
-        return priceCouple;
-    }
-
-    public void setPriceCouple(Integer priceCouple) {
-        this.priceCouple = priceCouple;
     }
 
     public Movie getMovie() {
