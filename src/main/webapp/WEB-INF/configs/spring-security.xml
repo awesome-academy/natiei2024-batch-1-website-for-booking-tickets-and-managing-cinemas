@@ -10,10 +10,8 @@
   <security:http auto-config="true" use-expressions="true">
     <security:intercept-url pattern="/login" access="isAnonymous()"/>
     <security:intercept-url pattern="/logout" access="permitAll"/>
-    <security:intercept-url pattern="/**" access="permitAll"/>
 
     <security:intercept-url pattern="/assets/**" access="permitAll"/>
-
 
     <!-- Restrict access to admin pages, require CUSTOMER role -->
     <security:intercept-url pattern="/customer/**" access="hasRole('ROLE_CUSTOMER')"/>
@@ -22,6 +20,7 @@
     <!-- Restrict access to admin pages, require ADMIN role -->
     <security:intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')"/>
     <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_MANAGER')"/>
+    <security:intercept-url pattern="/**" access="permitAll"/>
 
     <!-- Configure login form -->
     <security:form-login login-page="/login"
@@ -47,6 +46,6 @@
     class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
 
   <bean id="customAuthenticationSuccessHandler" class="cinemas.configs.CustomAuthenticationSuccessHandler">
-    <constructor-arg ref="userService"/>
+    <constructor-arg ref="usersService"/>
   </bean>
 </beans>

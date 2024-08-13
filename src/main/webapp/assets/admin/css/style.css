@@ -78,6 +78,7 @@ header .profile-name {
     position: fixed;
     top: 0;
     left: 0;
+    transition: ease .3s;
 }
 #sidebar-container h4 {
     margin: 0;
@@ -88,10 +89,16 @@ header .profile-name {
 }
 /* Sidebar sizes when expanded and expanded */
 .sidebar-expanded {
-    width: 120px !important;
+    width: 250px !important;
 }
 .sidebar-collapsed {
-    width: 300px !important;
+    width: 60px !important;
+}
+.content-ml-sidebar-expanded {
+    margin-left: 250px !important;
+}
+.content-ml-sidebar-collapsed {
+    margin-left: 60px !important;
 }
 /* Menu item*/
 #sidebar-container li.list-group-item{
@@ -162,8 +169,8 @@ a.list-group-item{
 .menu-collapsed, .submenu-icon, .sidebar-submenu {
     display: none;
 }
-.sidebar-collapsed .menu-collapsed,
-.sidebar-collapsed .submenu-icon,
-.sidebar-collapsed .sidebar-submenu  {
+.sidebar-expanded .menu-collapsed,
+.sidebar-expanded .submenu-icon,
+.sidebar-expanded .sidebar-submenu  {
     display: inline;
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.w3.org/1999/xhtml"
+  layout:decorate="~{layouts/admin/layout}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const revenueDetail = document.getElementById("revenue-detail");
+        if (revenueDetail) {
+          revenueDetail.addEventListener("click", function () {
+            window.open("/admin/reports/revenue", "_blank"); // Open in new tab
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <section layout:fragment="body">
+      <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-center mb-4 mt-3 rounded-2" style="background-color: #15b1ff;">
+          <h1 class="h2 mb-0 text-black font-weight-bold py-2">Dashboard</h1>
+        </div>
+
+        <!-- Content Row -->
+
+        <div class="row">
+          <!-- Area Chart -->
+          <div class="col-xl-8 col-lg-7 w-50">
+            <div class="card shadow mb-4">
+              <!-- Card Header -->
+              <div
+                class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+              >
+                <h6 class="m-0 font-weight-bold text-primary">Doanh thu tất cả rạp trong tuần</h6>
+                <div
+                  id="revenue-detail"
+                  style="width: 25px; height: 25px; cursor: pointer"
+                >
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <!-- Card Body -->
+              <div class="card-body w-100">
+                <div class="chart-area w-100 d-flex justify-content-center align-items-center">
+                  <section
+                    th:replace="~{admin/components/revenue-chart}"
+                  ></section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

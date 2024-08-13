@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Include Chart.js from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <canvas id="revenueChart"></canvas>
+  <script th:inline="javascript">
+    /*<![CDATA[*/
+    var revenueDates = /*[[${revenueLineGraph.getLabels()}]]*/ [];
+    var revenueAmounts = /*[[${revenueLineGraph.getDatas()}]]*/ [];
+    var revenueCtx = document.getElementById("revenueChart");
+
+    // Create the chart with extracted data
+    var myChart = new Chart(revenueCtx, {
+      responsive: true,
+      type: "line",
+      data: {
+        labels: revenueDates,
+        datasets: [
+          {
+            label: "Doanh Thu",
+            data: revenueAmounts,
+            borderColor: "#00b640",
+            fill: false,
+            tension: 0.2,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: {
+            ticks: {
+              callback: function (val, index) {
+                return index % 5 === 0 ? this.getLabelForValue(val) : "";
+              },
+              align: "center",
+            },
+          },
+          y: {
+            ticks: {
+              callback: function (val, index) {
+                return this.getLabelForValue(val) + " VND";
+              },
+              align: "center",
+            },
+          },
+        },
+      },
+    });
+
+    /*]]>*/
+  </script>
+</html>

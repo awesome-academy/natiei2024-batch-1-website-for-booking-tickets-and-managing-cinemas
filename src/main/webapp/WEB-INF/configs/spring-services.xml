@@ -4,44 +4,51 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <!-- Define your services beans -->
-  <bean id="userService" parent="baseTransactionProxy">
+  <bean id="usersService" parent="baseTransactionProxy">
     <property name="target">
-      <bean class="cinemas.services.impl.UserServiceImpl">
-        <constructor-arg ref="userRepository"/>
+      <bean class="cinemas.services.impl.UsersServiceImpl">
+        <constructor-arg ref="usersRepository"/>
       </bean>
     </property>
   </bean>
-  <bean id="bannerService" parent="baseTransactionProxy">
+  <bean id="bannersService" parent="baseTransactionProxy">
     <property name="target">
-      <bean class="cinemas.services.impl.BannerServiceImpl">
-        <constructor-arg ref="bannerRepository"/>
+      <bean class="cinemas.services.impl.BannersServiceImpl">
+        <constructor-arg ref="bannersRepository"/>
       </bean>
     </property>
   </bean>
-  <bean id="movieService" parent="baseTransactionProxy">
+  <bean id="moviesService" parent="baseTransactionProxy">
     <property name="target">
-      <bean class="cinemas.services.impl.MovieServiceImpl">
-        <constructor-arg ref="movieRepository"/>
+      <bean class="cinemas.services.impl.MoviesServiceImpl">
+        <constructor-arg ref="moviesRepository"/>
       </bean>
     </property>
   </bean>
   <!-- Configure user service and password encoder -->
   <bean id="customUserDetailsService" class="cinemas.services.impl.CustomUserDetailsServiceImpl">
-    <constructor-arg ref="userRepository"/>
+    <constructor-arg ref="usersRepository"/>
   </bean>
 
-  <bean id="cityService" parent="baseTransactionProxy">
+  <bean id="citiesService" parent="baseTransactionProxy">
     <property name="target">
-      <bean class="cinemas.services.impl.CityServiceImpl">
-        <constructor-arg ref="cityRepository"/>
+      <bean class="cinemas.services.impl.CitiesServiceImpl">
+        <constructor-arg ref="citiesRepository"/>
       </bean>
     </property>
   </bean>
 
-  <bean id="theaterService" parent="baseTransactionProxy">
+  <bean id="theatersService" parent="baseTransactionProxy">
     <property name="target">
-      <bean class="cinemas.services.impl.TheaterServiceImpl">
-        <constructor-arg ref="theaterRepository"/>
+      <bean class="cinemas.services.impl.TheatersServiceImpl">
+        <constructor-arg ref="theatersRepository"/>
+      </bean>
+    </property>
+  </bean>
+  <bean id="reportsService" parent="baseTransactionProxy">
+    <property name="target">
+      <bean class="cinemas.services.impl.ReportsServiceImpl">
+        <constructor-arg ref="bookingsRepository"/>
       </bean>
     </property>
   </bean>

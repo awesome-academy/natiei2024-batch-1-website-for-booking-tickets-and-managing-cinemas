@@ -1,6 +1,6 @@
 package cinemas.configs;
 
-import cinemas.services.UserService;
+import cinemas.services.UsersService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,11 +14,11 @@ import java.io.IOException;
 
 @Configuration
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
-    private UserService userService;
+    private UsersService usersService;
 
     @Autowired
-    public CustomAuthenticationSuccessHandler(UserService userService) {
-        this.userService = userService;
+    public CustomAuthenticationSuccessHandler(UsersService usersService) {
+        this.usersService = usersService;
     }
 
     @Override
@@ -26,12 +26,12 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
                                         Authentication authentication) throws IOException, ServletException {
 
         HttpSession session = request.getSession();
-        session.setAttribute("user", userService.findByEmail(authentication.getName()));
+        session.setAttribute("user", usersService.findByEmail(authentication.getName()));
 
         try {
             if (authentication.getAuthorities().stream()
-                    .anyMatch(authority -> authority.getAuthority().equals("ROLE_ADMIN"))) {
-                response.sendRedirect(request.getContextPath() + "/admin/");
+                    .anyMatch(authority -> authority.getAuthority().equals("ROLE_MANAGER"))) {
+                response.sendRedirect(request.getContextPath() + "/admin");
             } else {
                 response.sendRedirect(request.getContextPath() + "/");
             }
