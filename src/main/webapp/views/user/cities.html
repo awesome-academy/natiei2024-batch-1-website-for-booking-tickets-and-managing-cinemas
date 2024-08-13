@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/user/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f4e7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<section layout:fragment="body">
+    <div th:insert="~{components/cities}"> </div>
+</section>
+</body>
+</html>

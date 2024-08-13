@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +27,11 @@ public class CityController {
     public ResponseEntity<List<CityDto>> getCities() {
         var cities = cityService.getAllCityDtos();
         return new ResponseEntity<>(cities, HttpStatus.OK);
+    }
+    public String getAllCities(Model model) {
+        List<CityDto> cities = cityService.getAllCityDtos();
+        model.addAttribute("cities", cities);
+        return "user/cities";
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
