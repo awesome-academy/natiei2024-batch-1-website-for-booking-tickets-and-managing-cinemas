@@ -20,7 +20,7 @@
                         <div>Bước 1: Chọn Ghế</div>
                     </div>
 
-                    <form id="form-chonghe" action="#" method="POST">
+                    <form id="form-chonghe" th:action="@{#}" method="POST">
                         <div class="block-body">
                             <div class="container">
                                 <div class="row">
@@ -195,13 +195,12 @@
                                 </div>
                             </div>
                         </section>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btndatve text-white d-block border-0"
+                                    style="background-color: orangered; margin-bottom: 20px">NEXT <i
+                                    class="ion-ios-arrow-right"></i></button>
+                        </div>
                     </form>
-                    <div class="form-group">
-                        <button onclick="submit()" class="btn btn-block btndatve text-white d-block border-0"
-                                style="background-color: orangered; margin-bottom: 20px">NEXT <i
-                                class="ion-ios-arrow-right"></i></button>
-                        ;
-                    </div>
                 </div>
             </div>
         </div>

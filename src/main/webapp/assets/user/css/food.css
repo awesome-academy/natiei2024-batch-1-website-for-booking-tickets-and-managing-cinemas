@@ -1,0 +1,284 @@
+.booking-progress {
+    width: 100%;
+    border: 2px solid #d4d3c9;
+    #background-color: #F2F0E4;
+    display: block;
+}
+.progress > li {
+    width: 100%;
+}
+.main-content .progress {
+    position: relative;
+    min-height: 1000px;
+}
+.main-content .products-list {
+    margin: 0 20px 20px 20px;
+}
+.col-main .page-title {
+    margin-top: 0;
+    text-align: center;
+    background: #231d1c;
+    width: 100%;
+}
+
+.col-main .page-title h3 {
+    color: #fff;
+    line-height: 32px;
+    padding: 0;
+    margin: 0;
+}
+
+.top-content {
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid #d4d3c9;
+    background: #e9ecef;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.top-content .products-list {
+    width: 100%;
+    margin: 0;
+}
+
+.top-content .products-list > li {
+    margin: 0;
+    width: 100%;
+}
+
+.top-content .products-list .product-shop {
+    float: left;
+    padding: 0;
+    width: 100%;
+}
+
+.top-content .products-list .product-shop * {
+    white-space: normal;
+}
+
+.products-list .product-shop .product-primary {
+    font-weight: bold;
+}
+.booking-step .products-list .product-shop .desc {
+    white-space: normal;
+    width: 100%;
+}
+.booking-step .products-list .product-shop .desc.std {
+    white-space: pre-line;
+}
+#countdown .cgvminutes, #countdown .cgvseconds {
+    font-weight: normal;
+}
+
+.smalltext {
+    color: #999;
+}
+.main-content .products-list li.item {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.booking-step .action .button {
+    width: 18px;
+}
+.booking-step .action .qty.button {
+    color: #000;
+    width: 33px;
+}
+.minicart-wrapper ul {
+    width: 100%;
+}
+.minicart-wrapper ul .item.first .product-details {
+    margin: 0;
+}
+.minicart-wrapper img {
+    width: 74px;
+    height: 108px;
+    display: inline-block;
+}
+.minicart-wrapper .product-details {
+    padding-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 10px;
+}
+.minicart-wrapper .item {
+    display: inline-block;
+    width: 32%;
+    margin-left: 1%;
+    font-size: 12px;
+}
+.info-wrapper {
+    color: #cccccc;
+}
+.info-wrapper td {
+    padding: 0 5px;
+    font-weight: bold;
+    white-space: normal;
+    vertical-align: top;
+}
+.info-wrapper td.label {
+    font-weight: normal;
+}
+.booking-progress .main-content {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.progress {
+    width: 100%;
+}
+
+.booking-progress .main-content .progress .booking-step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+.main-content .h1 {
+    color: white;
+    text-align: center;
+    width: 100%;
+    background: black;
+    font-size: 16px;
+    line-height: 32px;
+    border-top: 2px solid #d4d3c9;
+    border-bottom: 2px solid #d4d3c9;
+}
+.main-content .products-list li.item.first {
+    float: left;
+    width: 49%;
+}
+
+.main-content .products-list li.item.last {
+    float: right;
+    width: 49%;
+}
+.main-content .products-list li.item img {
+    border: none;
+}
+.products-list .product-shop .product-secondary {
+    float: right;
+    width: 35%;
+    text-align: right;
+    clear: right;
+}
+
+.products-list .product-shop .product-primary, .products-list .product-shop .desc {
+    float: left;
+    width: 65%;
+    overflow: hidden;
+}
+.products-list > li .product-image {
+    float: left;
+    width: 33.33333%;
+}
+
+ol {
+    list-style: none;
+    float: left;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.main-content .products-list {
+    margin: 0 20px 20px 20px;
+}
+
+.products-list .product-shop {
+    float: right;
+    width: 66.66667%;
+    padding-left: 20px;
+}
+
+.products-list .product-shop .desc {
+    margin-top: 7px;
+}
+
+.products-list .product-shop .price-box {
+    margin-top: 0;
+}
+.products-list .product-shop .price-box .price {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.products-list .product-shop .action {
+    margin: 7px 0;
+}
+
+.products-list .product-shop .action {
+    margin: 7px 0;
+}
+#countdown > div {
+    padding: 10px;
+    border-radius: 5px;
+    background: #fdfcf0;
+    display: inline-block;
+    text-align: center;
+}
+#countdown div > span {
+    padding: 10px;
+    border-radius: 5px;
+    background: #e71a0f;
+    display: inline-block;
+    width: 40px;
+    color: #fff;
+}
+.button {
+    background: #e71a0f;
+    display: inline-block;
+    padding: 6px 2px;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.button:hover {
+    cursor: pointer;
+}
+.button + .button {
+    margin-left: 5px;
+}
+
+.input-text {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid silver;
+    background: #FFFFFF;
+    font-size: 15px;
+}
+.format-bg-top {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+}
+
+.format-bg-bottom {
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+}
+.bottom-content {
+    background-color: #000;
+    font-size: 0;
+}

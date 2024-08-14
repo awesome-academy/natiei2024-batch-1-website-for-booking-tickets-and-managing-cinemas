@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/user/layout}" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Popcorn and Drinks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/user/css/food.css}">
+</head>
+<body>
+<section layout:fragment="body" class="container my-5">
+    <div class="main-container">
+        <div class="main">
+            <div class="col-main">
+                <div class="booking-progress">
+                    <div class="page-title">
+                        <h3>Booking Online</h3>
+                    </div>
+                    <div class="top-content">
+                        <ol class="products-list">
+                            <li class="item">
+                                <div class="product-shop">
+                                    <div>
+                                        <div class="product-primary">
+                                            <p>CGV Hùng Vương Plaza | Phòng 1 | Số ghế (<em>C1</em>)</p>
+                                            <p>11/08/2024 19:50 ~ 21:50</p>
+                                        </div>
+                                        <div class="product-secondary">
+                                            <div class="countexpire" style="display: block">
+                                                <h5>Countdown Clock</h5>
+                                                <div id="countdown">
+                                                    <div>
+                                                        <span class="cgvminutes">4</span>
+                                                        <div class="smalltext">Minutes</div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="cgvseconds">25</span>
+                                                        <div class="smalltext">Seconds</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="main-content">
+                        <ul class="progress">
+                            <li class="booking-step">
+                                <label class="h1">Bắp Nước</label>
+                                <ol class="products-list">
+                                    <li class="item first">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/65c2ef952e22b_1707274133.png"
+                                             alt="NCT DREAM SINGLE COMBO" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">NCT DREAM SINGLE COMBO</div>
+                                            <div class="desc std">01 ly thiết kế nhóm nhạc NCT Dream +
+                                                01 nước ngọt siêu lớn
+                                                - Mẫu ly nhân vật phụ thuộc vào số lượng tại rạp
+                                                - Thêm 29k nhận ngay 01 bắp ngọt lớn
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">279.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="NCT DREAM SINGLE COMBO" class="button"
+                                                         onclick="selectedcons(this)" price="279000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="NCT DREAM SINGLE COMBO" class="button"
+                                                         onclick="selectedcons(this)" price="279000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item last">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/65c2f24d5f568_1707274829.png"
+                                             alt="NCT DREAM COUPLE COMBO" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">NCT DREAM COUPLE COMBO</div>
+                                            <div class="desc std">02 ly thiết kế nhóm nhac NCT Dream + 01 nước ngọt siêu
+                                                lớn
+                                                + 01 bắp ngọt lớn
+                                                - Mẫu ly nhân vật phụ thuộc vào số lượng tại rạp
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">429.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="NCT DREAM COUPLE COMBO" class="button"
+                                                         onclick="selectedcons(this)" price="429000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="NCT DREAM COUPLE COMBO" class="button"
+                                                         onclick="selectedcons(this)" price="429000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <ol class="products-list">
+                                    <li class="item first">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/660fcca7e3dcd_1712311464.png"
+                                             alt="MINI ADVENTURE COUPLE CB" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">MINI ADVENTURE COUPLE CB</div>
+                                            <div class="desc std">02 ly Line Friend Mini (kèm nước)
+                                                -Thêm 29,000đ nhận ngay 01 bắp ngọt
+                                                - Mẫu ly phụ thuộc vào số lượng tại rạp
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">369.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="MINI ADVENTURE COUPLE CB" class="button "
+                                                         onclick="selectedcons(this)" price="369000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="MINI ADVENTURE COUPLE CB" class="button "
+                                                         onclick="selectedcons(this)" price="369000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item last">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/6644731d5a8f5_1715761949.png"
+                                             alt="MY COMBO" class="product-image">
+
+                                        <div class="product-shop">
+                                            <div class="product-primary">MY COMBO</div>
+                                            <div class="desc std">1 bắp ngọt lớn + 1 nước siêu lớn
+                                                - Có phụ thu thêm tiền khi đổi vị bắp phô mai và bắp mix.
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">89.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="MY COMBO" class="button "
+                                                         onclick="selectedcons(this)" price="89000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="MY COMBO" class="button "
+                                                         onclick="selectedcons(this)" price="89000">+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <ol class="products-list">
+                                    <li class="item first">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/665a947396e0b_1717212276.png"
+                                             alt="NINJA TURTLE SINGLE COMBO" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">NINJA TURTLE SINGLE COMBO</div>
+                                            <div class="desc std">01 ly nhân vật Ninja Rùa (kèm nước) +
+                                                01 bắp ngọt lớn
+                                                - Miễn phí đổi vị Caramel hoặc Phô Mai
+                                                - Mẫu ly nhân vật phụ thụ vào số lượng tại rạp
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">239.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="NINJA TURTLE SINGLE COMBO" class="button "
+                                                         onclick="selectedcons(this)" price="239000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="NINJA TURTLE SINGLE COMBO" class="button "
+                                                         onclick="selectedcons(this)" price="239000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item last">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/665a96012aad3_1717212673.png"
+                                             alt="NINJA TURTLE SET COMBO" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">NINJA TURTLE SET COMBO</div>
+                                            <div class="desc std">04 ly nhân vật Ninja Rùa (kèm nước)
+                                                + 01 bắp ngọt lớn
+                                                - Miễn phí đổi ví bắp caramel và phô mai
+                                                - Mẫu ly nhân vật phụ thuộc vào số lượng tại rạp
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">749.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="NINJA TURTLE SET COMBO" class="button"
+                                                         onclick="selectedcons(this)" price="749000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="NINJA TURTLE SET COMBO" class="button"
+                                                         onclick="selectedcons(this)" price="749000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                                <ol class="products-list">
+                                    <li class="item first">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/651711ff95995_1696010752.png"
+                                             alt="PREMIUM CGV COMBO" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">PREMIUM CGV COMBO</div>
+                                            <div class="desc std">1 Bắp Lớn + 2 Nước Siêu Lớn + 1 Snack (tùy chọn
+                                                snack: thanh ngũ cốc, cơm cháy hoặc bánh que).
+                                                - Miễn phí đổi vị bắp Caramel
+                                                - Đổi vị phô mai phụ thu thêm tiền
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">129.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="PREMIUM CGV COMBO" class="button fml104312"
+                                                         onclick="selectedcons(this)" prd="104312" price="129000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="PREMIUM CGV COMBO" class="button fml104312"
+                                                         onclick="selectedcons(this)" prd="104312" price="129000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item last">
+                                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/concession/web/6465deb2716d7_1684397746.png"
+                                             alt="CGV COMBO" class="product-image">
+                                        <div class="product-shop">
+                                            <div class="product-primary">CGV COMBO</div>
+                                            <div class="desc std">1 bắp ngọt lớn + 2 nước siêu lớn
+                                                - Có phụ thu thêm tiền khi đổi vị bắp phô mai và bắp mix.
+                                                - Nhận hàng trong ngày xem phim (khi mua cùng vé) hoặc trong ngày đã
+                                                chọn (khi mua tại CGV Store)
+                                            </div>
+
+                                            <div class="desc">
+                                                <div class="price-box">
+                                                    <span class="label">Giá:</span>
+                                                    <span class="price">119.000,00&nbsp;₫</span></div>
+                                                <div class="action">
+                                                    <div title="CGV COMBO" class="button fml103799"
+                                                         onclick="selectedcons(this)" prd="103799" price="119000">-
+                                                    </div>
+                                                    <div class="input-text qty button">0</div>
+                                                    <div title="CGV COMBO" class="button fml103799"
+                                                         onclick="selectedcons(this)" prd="103799" price="119000">+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="format-bg-top"></div>
+                        <div class="minicart-wrapper">
+                            <ul>
+                                <li class="item first">
+                                    <div class="product-details">
+                                        <table class="info-wrapper">
+                                            <colgroup>
+                                                <col style="width: 40%">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <img src="https://phunuvietnam.mediacdn.vn/179072216278405120/2022/11/4/edogawa-conan--166754179290680712885.jpg"
+                                                         alt="">
+                                                </td>
+                                                <td>
+                                                    <table class="info-wrapper">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="label">
+                                                                PHIM ĐIỆN ẢNH THÁM TỬ LỪNG DANH CONAN: NGÔI SAO 5 CÁNH 1
+                                                                TRIỆU ĐÔ
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="label">2D</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="product-details">
+                                        <table class="info-wrapper">
+                                            <tbody>
+                                            <tr>
+                                                <td class="label">Rạp</td>
+                                                <td>CGV Hùng Vương Plaza</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Suất chiếu</td>
+                                                <td>
+                                                    21:50, 11/08/2024
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">Phòng chiếu</td>
+                                                <td>Phong 9</td>
+                                            </tr>
+                                            <tr class="block-seats" style="">
+                                                <td class="label">Ghế</td>
+                                                <td class="data">
+                                                    <span style="clear: both; float: left;">Vip</span>
+                                                    <span style="clear: both; float: left;">D6</span></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="product-details">
+                                        <table class="info-wrapper">
+                                            <thead>
+                                            <tr class="block-box">
+                                                <td class="label">Tên phim</td>
+                                                <td class="price">120.000₫</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="block-con">
+                                                <td class="label">Combo</td>
+                                                <td class="price"><span class="price">0,00&nbsp;₫</span></td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot class="block-price">
+                                            <tr>
+                                                <td class="label">Tổng</td>
+                                                <td class="price" colspan="2">134.909,00&nbsp;₫</td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="format-bg-bottom"></div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center pt-5">
+                    <button class="btn text-white" style="background-color: orangered">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
