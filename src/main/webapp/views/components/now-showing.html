@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Đang Chiếu</title>
+</head>
+<body>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-6 now">
+            <div>Phim Đang Chiếu</div>
+        </div>
+        <div class="col-6 text-right soon">
+            <div><a th:href="@{/movies/up-coming}">Phim Sắp Chiếu</a></div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div th:each="movie : ${movies}" class="col-md-3 col-sm-6 mb-4">
+            <div class="card">
+                <div class="card-img-top position-relative">
+                    <!-- Hiển thị poster của phim -->
+                    <img th:src="@{${movie.photoUrl}}" class="img-fluid" alt="Poster">
+                </div>
+                <div class="card-body">
+                    <!-- Hiển thị tiêu đề của phim -->
+                    <h5 class="card-title" th:text="${movie.titleVn}">Tiêu đề phim</h5>
+                    <p class="card-text">
+                        <strong>Thể loại:</strong> <span th:each="genre : ${movie.genres}" th:text="${genre.nameVn} + ', '">Thể loại</span><br>
+                        <strong>Thời lượng:</strong> <span th:text="${movie.runningTime}">Thời lượng</span><br>
+                    </p>
+                    <div class="text-center">
+                        <!-- Liên kết đến trang chi tiết phim -->
+                        <a th:href="@{/movies/{id}(id=${movie.id})}" class="btn btn-primary btn-sm">Chi tiết</a>
+                        <a th:href="@{/tickets/buy/{id}(id=${movie.id})}" class="btn btn-danger btn-sm">Mua Vé</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

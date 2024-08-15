@@ -30,6 +30,9 @@ public class MoviesServiceImpl implements MoviesService {
     public Optional<Movie> findById(int id) {
         return moviesRepository.findById(id);
     }
+    public List<Movie> getMoviesByStatus(MovieStatus status) {
+        return moviesRepository.getMoviesByStatus(status);
+    }
 
     @Override
     public PaginationResult<Movie> getPaginationMoviesByTitleAndStatus(String keyword, int page, int size, String status) {

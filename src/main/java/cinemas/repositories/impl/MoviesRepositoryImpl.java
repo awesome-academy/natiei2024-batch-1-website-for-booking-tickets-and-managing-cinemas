@@ -19,6 +19,13 @@ public class MoviesRepositoryImpl extends BaseRepositoryImpl<Movie, Integer> imp
     public MoviesRepositoryImpl() {
         super(Movie.class);
     }
+    @Override
+    public List<Movie> getMoviesByStatus(MovieStatus status) {
+        String hql = "FROM Movie m WHERE m.status = :status";
+        TypedQuery<Movie> query = entityManager.createQuery(hql, Movie.class);
+        query.setParameter("status", status);
+        return query.getResultList();
+    }
 
     public List<Movie> getMoviesByTitleAndStatus(String title, Pageable pageable, MovieStatus status) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
