@@ -29,6 +29,7 @@ replay_pid*
 
 # Environment
 src/main/resources/datasource.properties
+src/main/resources/cloudinary.properties
 
 # Tomcat
 .smarttomcat

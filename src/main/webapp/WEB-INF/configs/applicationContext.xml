@@ -12,9 +12,9 @@
 
   <!-- Load all annotation from java class -->
   <context:annotation-config/>
-
   <context:component-scan base-package="cinemas"/>
-
+  <!-- Loading Properties -->
+  <context:property-placeholder location="classpath:datasource.properties,classpath:cloudinary.properties"/>
 
   <!-- Use for json response -->
   <mvc:annotation-driven>
@@ -23,4 +23,6 @@
       <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
     </mvc:message-converters>
   </mvc:annotation-driven>
+
+  <bean id="multipartFilter" class="org.springframework.web.multipart.support.MultipartFilter"/>
 </beans>

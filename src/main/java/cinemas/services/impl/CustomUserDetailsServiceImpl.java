@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
 import java.util.Collection;
 import java.util.Collections;
 
@@ -33,7 +32,6 @@ public class CustomUserDetailsServiceImpl implements CustomUserDetailsService {
                 getAuthorities(user.getRole())
         );
     }
-
     private Collection<? extends GrantedAuthority> getAuthorities(RoleEnum role) {
         if (role == RoleEnum.CUSTOMER) {
             return Collections.singletonList(new SimpleGrantedAuthority("ROLE_CUSTOMER"));
