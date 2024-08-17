@@ -22,6 +22,7 @@
     <property name="target">
       <bean class="cinemas.services.impl.MoviesServiceImpl">
         <constructor-arg ref="moviesRepository"/>
+        <constructor-arg ref="cloudinaryService"/>
       </bean>
     </property>
   </bean>
@@ -66,5 +67,12 @@
         <constructor-arg ref="theatersRepository"/>
       </bean>
     </property>
+  </bean>
+  <bean id="genresService" class="cinemas.services.impl.GenresServiceImpl">
+    <constructor-arg ref="genresRepository"/>
+  </bean>
+  <!-- CloudinaryService -->
+  <bean id="cloudinaryService" class="cinemas.services.impl.CloudinaryServiceImpl">
+    <constructor-arg ref="cloudinary"/>
   </bean>
 </beans>

@@ -5,30 +5,55 @@ import cinemas.dtos.PaginationResult;
 import cinemas.enums.MovieStatus;
 import cinemas.models.Movie;
 import cinemas.repositories.MoviesRepository;
+import cinemas.services.CloudinaryService;
 import cinemas.services.MoviesService;
+import cinemas.dtos.MovieCreateFormDto;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
 
 public class MoviesServiceImpl implements MoviesService {
     private MoviesRepository moviesRepository;
+    private CloudinaryService cloudinaryService;
 
-    public MoviesServiceImpl(MoviesRepository moviesRepository) {
+    public MoviesServiceImpl(MoviesRepository moviesRepository, CloudinaryService cloudinaryService) {
         this.moviesRepository = moviesRepository;
+        this.cloudinaryService = cloudinaryService;
     }
 
     @Override
     public List<Movie> getAllMovies() {
         return moviesRepository.findAll();
     }
+
+    @Override
+    public Optional<Movie> findById(int id) {
+        return moviesRepository.findById(id);
+    }
+
     @Override
     public Movie save(Movie movie) {
         return moviesRepository.save(movie);
     }
 
     @Override
-    public Optional<Movie> findById(int id) {
-        return moviesRepository.findById(id);
+    public Movie save(MovieCreateFormDto movieCreateFormDto) {
+        Movie movie = save(movieCreateFormDto.toMovie());
+        if (!movieCreateFormDto.getPhoto().isEmpty()) {
+            return uploadPhoto(movie, movieCreateFormDto.getPhoto());
+        }
+        return movie;
+    }
+
+    @Override
+    public Movie uploadPhoto(Movie movie, MultipartFile photo) {
+        try {
+            movie.setPhotoUrl(cloudinaryService.upload(photo));
+            return moviesRepository.save(movie);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to upload photo");
+        }
     }
     public List<Movie> getMoviesByStatus(MovieStatus status) {
         return moviesRepository.getMoviesByStatus(status);

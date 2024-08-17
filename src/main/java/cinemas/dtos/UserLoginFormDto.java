@@ -1,10 +1,10 @@
-package cinemas.validators;
+package cinemas.dtos;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Email;
 
-public class UserValidator {
+public class UserLoginFormDto {
     @NotNull
     @Email
     private String email;
@@ -14,12 +14,13 @@ public class UserValidator {
 
     private boolean rememberMe;
 
-    public UserValidator() {
+    public UserLoginFormDto() {
     }
 
-    public UserValidator(String email, String password) {
+    public UserLoginFormDto(String email, String password, boolean rememberMe) {
         this.email = email;
         this.password = password;
+        this.rememberMe = rememberMe;
     }
 
     public String getEmail() {
@@ -42,7 +43,7 @@ public class UserValidator {
         return rememberMe;
     }
 
-    public UserValidator setRememberMe(boolean rememberMe) {
+    public UserLoginFormDto setRememberMe(boolean rememberMe) {
         this.rememberMe = rememberMe;
         return this;
     }

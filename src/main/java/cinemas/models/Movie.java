@@ -26,10 +26,10 @@ public class Movie extends SoftDeletableEntity {
     @Column(name = "language_en")
     private String languageEn;
     @Lob
-    @Column(name = "description_vn")
+    @Column(name = "description_vn", columnDefinition = "TEXT")
     private String descriptionVn;
     @Lob
-    @Column(name = "description_en")
+    @Column(name = "description_en", columnDefinition = "TEXT")
     private String descriptionEn;
     @Convert(converter = ZonedDateTimeConverter.class)
     @Column(name = "release_date")
@@ -43,7 +43,10 @@ public class Movie extends SoftDeletableEntity {
     private String photoUrl;
     @Enumerated(EnumType.ORDINAL)
     private MovieStatus status = MovieStatus.COMING_SOON; // 0 = coming soon, 1 = now showing, 2 = end showing
-    @ManyToMany(mappedBy = "movies",fetch = FetchType.EAGER)
+    @ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST }, fetch = FetchType.EAGER)
+    @JoinTable(name = "movie_genres",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private Set<Genre> genres;
 
     // Getters and Setters
