@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-<header class=" text-white text-center py-3">
+<header class="text-white text-center py-3">
     <div class="header-container">
         <div class="logo">
             <a th:href="@{/}">
@@ -24,7 +24,12 @@
         </div>
         <div th:if="${#authorization.expression('isAuthenticated()')}" class="user-info">
             <span class="username" th:text="#{header.greet(${session.user.getFullName()})}"></span>
-            <a th:href="@{/logout}" th:text="#{header.logout}"></a>
+            <div class="user-dropdown">
+                <a th:href="@{/users/me/info}">Thông tin cá nhân</a>
+                <a th:href="@{/users/me}">Tài khoản</a>
+                <a th:href="@{/bookings}">Vé của tôi</a>
+                <a th:href="@{/logout}" th:text="#{header.logout}"></a>
+            </div>
         </div>
         <div th:unless="${#authorization.expression('isAuthenticated()')}" class="login-prompt">
             <a th:href="@{/login}" th:text="#{header.login}"></a>
@@ -45,9 +50,7 @@
     </nav>
     <script>
         function reloadPageWithLanguage(lang, element) {
-            // Check if the element has the class 'active'
             if (element.classList.contains('active')) {
-                // If it has the class 'active', do nothing
                 return;
             }
 

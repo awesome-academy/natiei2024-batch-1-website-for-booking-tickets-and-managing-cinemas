@@ -15,7 +15,7 @@
 
     <!-- Restrict access to admin pages, require CUSTOMER role -->
     <security:intercept-url pattern="/customer/**" access="hasRole('ROLE_CUSTOMER')"/>
-    <security:intercept-url pattern="/user/**" access="hasRole('ROLE_CUSTOMER')"/>
+    <security:intercept-url pattern="/users/**" access="hasRole('ROLE_CUSTOMER')"/>
     <security:intercept-url pattern="/foods/**" access="hasRole('ROLE_CUSTOMER')"/>
     <!-- Restrict access to admin pages, require ADMIN role -->
     <security:intercept-url pattern="/manager/**" access="hasRole('ROLE_MANAGER')"/>

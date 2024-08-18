@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/user/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/assets/user/css/my-information.css}">
+    <link rel="stylesheet" th:href="@{/assets/user/css/my-ticket.css}">
+    <link rel="stylesheet" th:href="@{/assets/user/css/ticket-detail.css}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f4e7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: row;
+        }
+        .container{
+            padding-top: 40px;
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #f6f4e7;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 358px;
+        }
+
+        .sidebar h3 {
+            color: #f04e31;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            background-color: #cccccc;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li.active a,
+        .sidebar ul li a:hover {
+            background-color: #f04e31;
+            color: white;
+        }
+
+        .content {
+            width: 75%;
+            flex-grow: 1;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+<section layout:fragment="body">
+    <div class="row">
+        <div class="sidebar">
+            <h3>TÀI KHOẢN CGV</h3>
+            <ul>
+                <li th:classappend="${section == 'info'} ? 'active'">
+                    <a th:href="@{/users/me/info}">Thông tin cá nhân</a>
+                </li>
+                <li th:classappend="${section == 'account'} ? 'active'">
+                    <a th:href="@{/users/me}">Tài khoản</a>
+                </li>
+                <li th:classappend="${section == 'booking'|| section == 'booking-detail'} ? 'active'">
+                    <a th:href="@{/bookings}">Vé của tôi</a>
+                </li>
+                <li th:classappend="${section == 'voucher'} ? 'active'">
+                    <a th:href="@{/vouchers/me}">Thẻ khuyến mãi</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div layout:fragment="info-layout-body"></div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -120,3 +120,34 @@ header {
 .main-nav ul li a:hover {
     color: #f04e31;
 }
+.user-info {
+    position: relative;
+    display: inline-block;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.user-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-dropdown a:hover {
+    background-color: #f04e31;
+}
+
+.user-info:hover .user-dropdown {
+    display: block;
+}

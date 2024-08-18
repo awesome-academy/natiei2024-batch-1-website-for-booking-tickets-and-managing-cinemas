@@ -1,0 +1,30 @@
+.card {
+    height: 350px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    gap: 5px;
+    display: flex
+}
+
+.card-body {
+    padding: 10px;
+}
+.card-img {
+    width: 100px;
+    height: 200px;
+    object-fit: cover;
+}
+.btn{
+    display: ruby;
+}
+.btn-primary {
+    background-color:#007bff;
+    border: none;
+    margin-top: auto;
+}
+
+.btn-primary:hover {
+    background-color: #f04e31;
+    color:#fdfcf0;
+}

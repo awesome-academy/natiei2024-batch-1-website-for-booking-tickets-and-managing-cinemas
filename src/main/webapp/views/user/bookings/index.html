@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html"
+      layout:decorate="~{layouts/user/info-layout}">
+<body layout:fragment="info-layout-body">
+<div class="form-title">
+    <h4> LỊCH SỬ </h4>
+</div>
+<form>
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="https://example.com/minions.jpg" class="img-fluid rounded-start" alt="Kẻ Trộm Mặt Trăng 4">
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">Mã Đặt Vé: 813860624 (Trạng thái: Hoàn Tất)</h5>
+                    <p class="card-text"><strong>Kẻ Trộm Mặt Trăng 4</strong></p>
+                    <p class="card-text">07/07/2024<br>From 18:40 PM ~ To 20:35 PM<br>CGV Vincom Da Nang, Cinema 3 (K10,
+                        K9)</p>
+                    <p class="card-text"><strong>338,090.00 đ</strong></p>
+                    <a th:href="@{/user/ticket-detail}" class="btn btn-primary">Xem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-2">
+                <img src="https://example.com/doraemon.jpg" class="img-fluid rounded-start"
+                     alt="Doraemon: Nobita và Bản Giao Hưởng Địa Cầu">
+            </div>
+            <div class="col-md-10">
+                <div class="card-body">
+                    <h5 class="card-title">Mã Đặt Vé: 639955442 (Trạng thái: Hoàn Tất)</h5>
+                    <p class="card-text"><strong>Phim Điện Ảnh Doraemon: Nobita và Bản Giao Hưởng Địa Cầu</strong></p>
+                    <p class="card-text">27/05/2024<br>From 20:30 PM ~ To 22:42 PM<br>CGV Vinh Trung Plaza, Cinema 1
+                        (M8, M9)</p>
+                    <p class="card-text"><strong>229,000.00 đ</strong></p>
+                    <a th:href="@{/user/ticket-detail}" class="btn btn-primary">Xem</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

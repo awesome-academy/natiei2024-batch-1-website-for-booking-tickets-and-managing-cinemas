@@ -1,0 +1,31 @@
+body {
+    background-color: #fdfbe8;
+}
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.btn-save {
+    background-color:  #e71a0f;
+    color: #fff;
+}
+.btn-save:hover {
+    background-color: #c30025;
+}
+.optional-info {
+    border-top: 2px solid #ddd;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+label {
+    font-weight: bold;
+}

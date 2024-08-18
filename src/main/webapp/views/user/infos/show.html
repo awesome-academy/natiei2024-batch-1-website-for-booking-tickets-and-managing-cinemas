@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layouts/user/info-layout}">
+<body layout:fragment="info-layout-body">
+<div class="form-title">
+    <h4> THÔNG TIN CÁ NHÂN</h4>
+</div>
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="name">Tên *</label>
+            <input type="text" class="form-control" id="name" placeholder="Huỳnh Thị Thục Vi">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="city">Thành phố/Tỉnh *</label>
+            <select id="city" class="form-control">
+                <option selected>Đà Nẵng</option>
+                <option>...</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="phone">Điện thoại *</label>
+            <input type="text" class="form-control" id="phone" placeholder="0376719322">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="district">Quận *</label>
+            <select id="district" class="form-control">
+                <option selected>700</option>
+                <option>...</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Giới tính *</label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">Nam</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female"
+                           checked>
+                    <label class="form-check-label" for="female">Nữ</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="none" value="none">
+                    <label class="form-check-label" for="none">None</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="birthday">Ngày sinh *</label>
+            <input type="text" class="form-control" id="birthday" placeholder="JUL 07 2003">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="email">Địa chỉ email *</label>
+            <input type="email" class="form-control" id="email" placeholder="viihuynh057@gmail.com">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="address">Địa chỉ *</label>
+            <input type="text" class="form-control" id="address" placeholder="No address 700">
+        </div>
+    </div>
+    <div class="optional-info">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="membership-card">Số thẻ thành viên</label>
+                <input type="text" class="form-control" id="membership-card" placeholder="9992-3575-6576-0385" readonly>
+            </div>
+            <button type="submit" class="btn btn-save btn-block">LƯU LẠI</button>
+            <div/>
+        </div>
+    </div>
+</form>
+</body>
+</html>
