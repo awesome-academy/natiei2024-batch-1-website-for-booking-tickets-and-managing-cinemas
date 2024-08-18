@@ -1,6 +1,6 @@
 package cinemas.controllers;
 
-import cinemas.validators.UserValidator;
+import cinemas.dtos.UserLoginFormDto;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,7 +16,7 @@ public class SessionsController {
 
     @GetMapping("/login")
     public String login(Model model) {
-        model.addAttribute("user", new UserValidator());
+        model.addAttribute("user", new UserLoginFormDto());
         return "login";
     }
 

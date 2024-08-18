@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.SavedRequest;
 
 import java.io.IOException;
 
@@ -27,6 +28,14 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 
         HttpSession session = request.getSession();
         session.setAttribute("user", usersService.findByEmail(authentication.getName()));
+
+        // Check if there's a saved request
+        SavedRequest savedRequest = (SavedRequest) session.getAttribute("SPRING_SECURITY_SAVED_REQUEST");
+        if (savedRequest != null) {
+            // Redirect to the original requested URL
+            response.sendRedirect(savedRequest.getRedirectUrl());
+            return;
+        }
 
         try {
             if (authentication.getAuthorities().stream()

@@ -16,8 +16,7 @@ public class Genre extends CreationUpdationAuditableEntity {
     private String nameVn;
     @Column(name = "name_en")
     private String nameEn;
-    @ManyToMany
-    @JoinTable(name = "movie_genres", joinColumns = @JoinColumn(name = "genre_id"), inverseJoinColumns = @JoinColumn(name = "movie_id"))
+    @ManyToMany(mappedBy = "genres")
     private Set<Movie> movies;
 
     // Getters and Setters
@@ -43,5 +42,13 @@ public class Genre extends CreationUpdationAuditableEntity {
 
     public void setNameEn(String nameEn) {
         this.nameEn = nameEn;
+    }
+
+    public Set<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(Set<Movie> movies) {
+        this.movies = movies;
     }
 }
