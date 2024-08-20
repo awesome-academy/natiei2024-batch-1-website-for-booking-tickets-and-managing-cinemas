@@ -12,9 +12,9 @@
 
   <!-- Load all annotation from java class -->
   <context:annotation-config/>
-
   <context:component-scan base-package="cinemas"/>
-
+  <!-- Loading Properties -->
+  <context:property-placeholder location="classpath:datasource.properties,classpath:cloudinary.properties"/>
 
   <!-- Use for json response -->
   <mvc:annotation-driven>

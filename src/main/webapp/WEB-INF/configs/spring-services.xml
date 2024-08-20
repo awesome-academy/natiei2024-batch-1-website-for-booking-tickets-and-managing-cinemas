@@ -67,6 +67,10 @@
       </bean>
     </property>
   </bean>
+  <!-- CloudinaryService -->
+  <bean id="cloudinaryService" class="cinemas.services.impl.CloudinaryServiceImpl">
+    <constructor-arg ref="cloudinary"/>
+  </bean>
   <bean id="showtimeSeatsService" parent="baseTransactionProxy">
     <property name="target">
       <bean class="cinemas.services.impl.ShowtimeSeatsServiceImpl">

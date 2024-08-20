@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+  xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Layout</title>
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" th:href="@{/assets/css/fontawesome.css}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" th:href="@{/assets/user/css/header.css}">
-    <link rel="stylesheet" th:href="@{/assets/user/css/footer.css}">
-    <link rel="stylesheet" th:href="@{/assets/user/css/slide-banner.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{/assets/user/css/slide-movie.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{/assets/user/css/cities.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{/assets/user/css/dialog-ticket.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{/assets/user/css/movie-details.css}" type="text/css">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script th:src="@{/assets/js/jquery-3.6.0.min.js}"></script>
-    <script th:src="@{/assets/js/popper.min.js}"></script>
-    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+  <meta charset="UTF-8">
+  <title>Layout</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Roboto Font -->
+  <link rel="stylesheet" th:href="@{/assets/css/roboto.wght-400-700.css}">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" th:href="@{/assets/user/css/header.css}">
+  <link rel="stylesheet" th:href="@{/assets/user/css/footer.css}">
+  <link rel="stylesheet" th:href="@{/assets/user/css/slide-banner.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/assets/user/css/slide-movie.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/assets/user/css/cities.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/assets/user/css/dialog-ticket.css}" type="text/css">
+  <link rel="stylesheet" th:href="@{/assets/user/css/movie-details.css}" type="text/css">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script th:src="@{/assets/js/jquery-3.6.0.min.js}"></script>
+  <script th:src="@{/assets/js/popper.min.js}"></script>
+  <script th:src="@{/assets/js/bootstrap.min.js}"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <span class="d-none" id="current_language_code" th:text="${#locale.getLanguage()}"></span></p>
@@ -31,8 +31,8 @@
 
 <!-- Main Content -->
 <main class="flex-fill d-flex justify-content-center align-items-center">
-    <section layout:fragment="body" class="container">
-    </section>
+  <section layout:fragment="body" class="container">
+  </section>
 </main>
 
 <footer th:replace="~{layouts/user/footer :: footer}"></footer>

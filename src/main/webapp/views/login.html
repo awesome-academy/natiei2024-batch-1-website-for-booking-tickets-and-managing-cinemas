@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form_container">
-                        <!--/*@thymesVar id="user" type="cinemas.validators.UserValidator"*/-->
+                        <!--/*@thymesVar id="user" type="cinemas.dtos.UserLoginFormDto"*/-->
                         <form th:action="@{/login}" th:object="${user}" method="post">
                             <div class="input-group mb-3">
                                 <div class="input-group-append">
